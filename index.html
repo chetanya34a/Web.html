@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STREET FOOD LOVE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fffdf9;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(to right, #ff5e57, #ff9966);
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    nav {
+      background-color: #fff3ee;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #ff4c4c;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff7f50;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .item {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .item img {
+      width: 100%;
+      border-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .item h3 {
+      margin: 15px 0 5px;
+      color: #ff4c4c;
+    }
+    .item p {
+      font-size: 0.9em;
+      color: #777;
+    }
+    .item button {
+      margin-top: 10px;
+      padding: 12px 25px;
+      background-color: #ff4c4c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .item button:hover {
+      background-color: #ff7f50;
+    }
+    form {
+      text-align: center;
+    }
+    form input, form select {
+      margin: 10px;
+      padding: 12px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #ff4c4c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .testimonial {
+      background: #fff0eb;
+      padding: 40px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    .testimonial p {
+      font-style: italic;
+      font-size: 1.1em;
+    }
+    .contact {
+      text-align: center;
+      font-size: 0.95em;
+      margin-top: 40px;
+      color: #555;
+    }
+    footer {
+      background: #ff4c4c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    .order-summary {
+      background-color: #f8d7da;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      color: #721c24;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>STREET FOOD LOVE</h1>
+    <p>A TASTE YOU'LL REMEMBER</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#order">Order</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="menu">
+    <h2 style="text-align:center; color:#ff4c4c;">Our Special Menu</h2>
+    <div class="menu">
+      <!-- Menu Items with Buttons -->
+      <div class="item">
+        <img src="https://i.imgur.com/4cC5wVv.jpg" alt="Pani Puri">
+        <h3>Pani Puri</h3>
+        <p>Spicy, tangy, and crunchy delight</p>
+        <button onclick="addToOrder('Pani Puri')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/bWQ4z4h.jpg" alt="Pav Bhaji">
+        <h3>Pav Bhaji</h3>
+        <p>Buttery buns with spicy mashed veggies</p>
+        <button onclick="addToOrder('Pav Bhaji')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/Kv8rrFi.jpg" alt="Vada Pav">
+        <h3>Vada Pav</h3>
+        <p>Spicy batata vada in a bun with chutney</p>
+        <button onclick="addToOrder('Vada Pav')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/klWg2Lx.jpg" alt="Chole Bhature">
+        <h3>Chole Bhature</h3>
+        <p>Fluffy bhature with spicy chickpeas</p>
+        <button onclick="addToOrder('Chole Bhature')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/7FGH7FG.jpg" alt="Momos">
+        <h3>Momos</h3>
+        <p>Steamed dumplings with spicy sauce</p>
+        <button onclick="addToOrder('Momos')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/w1jHYxd.jpg" alt="Spring Roll">
+        <h3>Spring Roll</h3>
+        <p>Crunchy rolls filled with veggies</p>
+        <button onclick="addToOrder('Spring Roll')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/v5zYbdW.jpg" alt="Fries">
+        <h3>Masala Fries</h3>
+        <p>Indian-style fries with tangy seasoning</p>
+        <button onclick="addToOrder('Masala Fries')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/Ro2Q5Aq.jpg" alt="Noodles">
+        <h3>Chowmein</h3>
+        <p>Stir-fried noodles with veggies and sauce</p>
+        <button onclick="addToOrder('Chowmein')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/ZDdAyk3.jpg" alt="Pasta">
+        <h3>Pasta</h3>
+        <p>Delicious pasta in creamy sauce</p>
+        <button onclick="addToOrder('Pasta')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/Tn9Jj7G.jpg" alt="Paneer Tikka">
+        <h3>Paneer Tikka</h3>
+        <p>Grilled paneer marinated with spices</p>
+        <button onclick="addToOrder('Paneer Tikka')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/Xso5jq6.jpg" alt="Samosa">
+        <h3>Samosa</h3>
+        <p>Crispy pastry filled with spicy potatoes</p>
+        <button onclick="addToOrder('Samosa')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/FqpM5dA.jpg" alt="Chilli Paneer">
+        <h3>Chilli Paneer</h3>
+        <p>Paneer in spicy, tangy sauce</p>
+        <button onclick="addToOrder('Chilli Paneer')">Add to Order</button>
+      </div>
+      <div class="item">
+        <img src="https://i.imgur.com/U7O3xtP.jpg" alt="Manchurian">
+        <h3>Manchurian</h3>
+        <p>Fried veggies in sweet-spicy sauce</p>
+        <button onclick="addToOrder('Manchurian')">Add to Order</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="order">
+    <h2 style="text-align:center; color:#ff4c4c;">Place Your Order</h2>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <select required>
+        <option value="">Select Food Item</option>
+        <option value="Pani Puri">Pani Puri</option>
+        <option value="Vada Pav">Vada Pav</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Burger">Burger</option>
+        <option value="Momos">Momos</option>
+        <option value="Fries">Fries</option>
+        <option value="Chowmein">Chowmein</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Paneer Tikka">Paneer Tikka</option>
+        <option value="Samosa">Samosa</option>
+        <option value="Chilli Paneer">Chilli Paneer</option>
+        <option value="Manchurian">Manchurian</option>
+      </select>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <section class="testimonial">
+    <h3>What Our Customers Say</h3>
+    <p>"Best street food experience ever! The Pani Puri was to die for!"</p>
+  </section>
+
+  <footer id="contact">
+    <p>Contact Us: info@streetfoodlove.com</p>
+  </footer>
+
+  <script>
+    let orderItems = [];
+    
+    function addToOrder(item) {
+      orderItems.push(item);
+      alert(item + ' added to your order!');
+      updateOrderSummary();
+    }
+
+    function updateOrderSummary() {
+      const orderSummary = document.createElement('div');
+      orderSummary.classList.add('order-summary');
+      orderSummary.innerHTML = `<h4>Your Order:</h4><p>${orderItems.join(', ')}</p>`;
+      document.body.appendChild(orderSummary);
+    }
+  </script>
+
+</body>
+</html>
