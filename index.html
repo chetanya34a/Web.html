@@ -292,7 +292,7 @@
     function updateOrderSummary() {
       const orderSummary = document.createElement('div');
       orderSummary.classList.add('order-summary');
-      orderSummary.innerHTML = `<h4>Your Order:</h4><p>${orderItems.join(', ')}</p>`;
+      orderSummary.innerHTML = <h4>Your Order:</h4><p>${orderItems.join(', ')}</p>;
       document.body.appendChild(orderSummary);
     }
   </script>
